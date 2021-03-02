@@ -1,0 +1,27 @@
+Checks: '*, 
+    -llvm-header-guard, 
+    -llvmlibc-callee-namespace, 
+    -llvmlibc-implementation-in-namespace, 
+    -llvmlibc-restrict-system-libc-headers,
+    -fuchsia-trailing-return, 
+    -fuchsia-default-arguments-calls,
+    -fuchsia-default-arguments-declarations,
+    -google-runtime-references,
+    -cppcoreguidelines-pro-type-reinterpret-cast,
+    -cppcoreguidelines-pro-type-union-access,
+    -hicpp-signed-bitwise'
+CheckOptions:
+  - key:             cppcoreguidelines-macro-usage.AllowedRegexp
+    value:           '.*_API|ID._.*|_APS_.*|DBG_NEW'
+  - key:             bugprone-reserved-identifier.AllowedIdentifiers
+    value:           '_CRTDBG_MAP_ALLOC'
+  - key:             cert-dcl37-c.AllowedIdentifiers
+    value:           '_CRTDBG_MAP_ALLOC'
+  - key:             cert-dcl51-cpp.AllowedIdentifiers
+    value:           '_CRTDBG_MAP_ALLOC'
+  - key:             llvmlibc-restrict-system-libc-headers.Includes
+    value:           "tuple, string, vector"
+  - key:             cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor
+    value:           'true'
+  - key:             hicpp-special-member-functions.AllowSoleDefaultDtor
+    value:           'true'
